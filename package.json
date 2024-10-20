@@ -31,7 +31,7 @@
     "workbox-streams": "^6.6.0"
   },
   "scripts": {
-    "dev": "webpack serve --open",
+    "dev": "webpack serve --open --port 8080",
     "start": "webpack serve --open --port 8080",
     "build": "rm -rf build && webpack --config webpack.config.ts",
     "test": "react-scripts test",

@@ -1,11 +1,12 @@
 import path from "path";
 import HTMLWebpackPlugin from "html-webpack-plugin";
-import { ModuleFederationPlugin } from "@module-federation/enhanced";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import glob from "glob-all";
 import { PurgeCSSPlugin } from "purgecss-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
+
+// useful: https://rajaraodv.medium.com/webpack-the-confusing-parts-58712f8fcad9
 
 const config = {
   mode: "development",
@@ -18,7 +19,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "bundle.js",
-    publicPath: "http://localhost:3000/",
+    publicPath: "http://localhost:8080/",
     clean: true,
   },
   optimization: {
@@ -110,26 +111,6 @@ const config = {
     extensions: [".tsx", ".ts", ".js"],
   },
   plugins: [
-    new ModuleFederationPlugin({
-      name: "firstAppsComponents",
-      library: { type: "var", name: "firstAppsComponents" },
-      filename: "firstAppsComponents.js",
-      exposes: {
-        "./Button": "./src/app/components/button",
-      },
-      shared: {
-        react: {
-          singleton: true,
-          version: "0",
-          requiredVersion: false,
-        },
-        "react-dom": {
-          requiredVersion: false,
-          singleton: true,
-          version: "0",
-        },
-      },
-    }),
     new HTMLWebpackPlugin({
       template: "./public/index.html",
     }),
