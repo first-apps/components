@@ -6,6 +6,8 @@ import glob from "glob-all";
 import { PurgeCSSPlugin } from "purgecss-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
 
+// TODO: SUpport for module federation
+
 // useful: https://rajaraodv.medium.com/webpack-the-confusing-parts-58712f8fcad9
 
 const config = {
@@ -91,7 +93,11 @@ const config = {
           {
             loader: "babel-loader",
             options: {
-              presets: ["@babel/preset-env"],
+              presets: [
+                "@babel/preset-env",
+                "@babel/preset-typescript",
+                "@babel/preset-react",
+              ],
             },
           },
           "ts-loader",
