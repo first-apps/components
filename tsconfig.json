@@ -23,6 +23,6 @@
     "incremental": true,
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["./src**/*.ts", "./src/**/*.tsx"],
   "exclude": ["node_modules", "build", "dist", "**/*.test.*", "**/*.json"]
 }

@@ -5,7 +5,7 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 
 // do not import any css files in this tsx file
-// the webpack is configured to only process the css inside the src/app folder
+// the webpack is configured to only process the css inside the src/app and src/lib folder
 // all the global css file import goes into src/app/index/tsx
 
 const root = ReactDOM.createRoot(

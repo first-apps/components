@@ -9,6 +9,8 @@
 /postcss.config.ts
 /tailwind.config.js
 /tailwind.config.ts
+/rollup.config.ts
+/.babelrc.json
 
 # Exclude service workers
 /reportWebVitals.ts
@@ -36,4 +38,11 @@
 /yarn-debug.log*
 /yarn-error.log*
 /.vscode/settings.json
-/dist
+/build
+/.rollup.cache
+.env.lib
+.env.app
+/public
+package.json
+tsconfig.json
+tsconfig.tsbuildinfo
