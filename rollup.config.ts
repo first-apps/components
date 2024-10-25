@@ -37,6 +37,7 @@ export default [
       }),
       typescript({
         tsconfig: "./tsconfig.json",
+        include: ["./src/lib/**/*.ts", "./src/lib/**/*.tsx"],
       }),
       terser(),
     ],

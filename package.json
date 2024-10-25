@@ -84,7 +84,6 @@
     "@types/react-dom": "^18.3.0",
     "autoprefixer": "^10.4.20",
     "env-cmd": "^10.1.0",
-    "glob-all": "^3.3.1",
     "react-jsx": "^1.0.0",
     "rollup": "^4.24.0",
     "rollup-plugin-flat-dts": "^2.8.0",
