@@ -1,4 +1,9 @@
 .button {
-  background-color: #0070f3;
-  padding: 5px 20px;
+  @apply twcss-py-1 twcss-px-5;
+}
+.left {
+  @apply twcss-pl-2;
+}
+.right {
+  @apply twcss-pr-2;
 }

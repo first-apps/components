@@ -2,19 +2,31 @@ import { useState } from "react";
 import globalStyles from "../index.module.css";
 import styles from "./navbar.module.css";
 import { INavbarProps } from "./navbar.types";
+import { Button } from "../button";
+import Bars3Icon from "@heroicons/react/24/outline/Bars3Icon";
+import XMarkIcon from "@heroicons/react/24/outline/XMarkIcon";
 
 export const Navbar: React.FC<INavbarProps> = (props) => {
   const { children, row, column, alignCenter, className } = props;
   const [open, setOpen] = useState(false);
 
+  const Trigger = (
+    <Button
+      className={styles["navigation-trigger"]}
+      onClick={() => setOpen((prev) => !prev)}
+      icon={
+        open ? (
+          <XMarkIcon className="twcss-size-6" />
+        ) : (
+          <Bars3Icon className="twcss-size-6" />
+        )
+      }
+    />
+  );
+
   return (
     <>
-      <div
-        className={styles["navigation-trigger"]}
-        onClick={() => setOpen((prev) => !prev)}
-      >
-        {open ? "Close" : "Open"}
-      </div>
+      {Trigger}
       <ul
         role="navigation"
         {...props}
@@ -29,12 +41,7 @@ export const Navbar: React.FC<INavbarProps> = (props) => {
           .filter((el) => el)
           .join(" ")}
       >
-        <div
-          className={styles["navigation-trigger"]}
-          onClick={() => setOpen((prev) => !prev)}
-        >
-          {open ? "Close" : "Open"}
-        </div>
+        {Trigger}
         {children}
       </ul>
     </>
