@@ -21,8 +21,8 @@
     "micro frontend"
   ],
   "scripts": {
-    "dev": "react-scripts start --port 8080",
-    "start": "react-scripts start --port 8080",
+    "dev": "set PORT=8080 && react-scripts start",
+    "start": "set PORT=8080 && react-scripts start",
     "build": "rm -rf build && react-scripts build",
     "build:lib": "rm -rf dist && rollup -c rollup.config.ts --bundleConfigAsCjs",
     "publish": "npm publish --access public --tag latest",

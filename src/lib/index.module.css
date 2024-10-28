@@ -1,0 +1,21 @@
+/* global styles */
+.flex {
+  @apply twcss-flex;
+}
+
+.flex-row {
+  @apply twcss-flex twcss-flex-row;
+}
+
+.flex-column {
+  @apply twcss-flex twcss-flex-col;
+}
+.no-padding {
+  @apply twcss-p-0;
+}
+.no-margin {
+  @apply twcss-m-0;
+}
+.align-center {
+  @apply twcss-items-center twcss-justify-center;
+}
