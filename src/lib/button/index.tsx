@@ -9,7 +9,7 @@ export const Button: React.FC<IButtonProps> = (props) => {
       {...rest}
       className={[
         styles.button,
-        position === "left" ? styles.left : styles.right,
+        icon && (position === "left" ? styles.left : styles.right),
         rest.className,
       ]
         .filter((el) => el)

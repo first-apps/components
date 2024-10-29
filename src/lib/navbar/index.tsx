@@ -16,9 +16,9 @@ export const Navbar: React.FC<INavbarProps> = (props) => {
       onClick={() => setOpen((prev) => !prev)}
       icon={
         open ? (
-          <XMarkIcon className="twcss-size-6" />
+          <XMarkIcon className={globalStyles["default-icon-size"]} />
         ) : (
-          <Bars3Icon className="twcss-size-6" />
+          <Bars3Icon className={globalStyles["default-icon-size"]} />
         )
       }
     />
