@@ -4,6 +4,10 @@
   --white: #fafbff;
   --black: #181b29;
   --light-grey: #f2f2f2;
+  --button-color: var(--black);
+  --button-hover-color: #181b29c3;
+  --button-active-color: #181b29d7;
+  --button-text-color: var(--white);
 }
 
 h1,

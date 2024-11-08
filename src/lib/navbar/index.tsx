@@ -7,7 +7,7 @@ import Bars3Icon from "@heroicons/react/24/outline/Bars3Icon";
 import XMarkIcon from "@heroicons/react/24/outline/XMarkIcon";
 
 export const Navbar: React.FC<INavbarProps> = (props) => {
-  const { children, row, column, alignCenter, className } = props;
+  const { children, row, column, alignCenter, className, ...rest } = props;
   const [open, setOpen] = useState(false);
 
   const Trigger = (
@@ -29,7 +29,7 @@ export const Navbar: React.FC<INavbarProps> = (props) => {
       {Trigger}
       <ul
         role="navigation"
-        {...props}
+        {...rest}
         className={[
           styles.navbar,
           row && globalStyles["flex-row"],

@@ -2,20 +2,51 @@ import { IInputProps } from "./input.types";
 import globalStyles from "../index.module.css";
 import styles from "./input.module.css";
 import { Button } from "../button";
+import { useEffect, useState } from "react";
+
+const Form = (props) => <form {...props} />;
+const Div = (props) => <div {...props} />;
 
 export const Input: React.FC<IInputProps> = (props) => {
   const {
     icon,
     position = "left",
     containerProps,
-    submitProps,
+    submit,
     fullWidth,
     ...rest
   } = props;
 
+  const [value, setValue] = useState(rest.value);
+
+  useEffect(() => {
+    setValue(rest.value);
+  }, [rest.value]);
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+    rest.onChange?.(e);
+    return;
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (containerProps?.onSubmit) {
+      containerProps.onSubmit(e as any, value);
+      return;
+    }
+    if (typeof submit === "object" && submit?.onSubmit) {
+      submit.onSubmit(e as any, value);
+      return;
+    }
+  };
+
+  const Container = submit ? Form : Div;
+
   return (
-    <div
+    <Container
       {...containerProps}
+      onSubmit={submit ? handleSubmit : undefined}
       className={[
         styles.container,
         fullWidth && globalStyles["full-width"],
@@ -29,6 +60,8 @@ export const Input: React.FC<IInputProps> = (props) => {
       {icon && position === "left" && icon}
       <input
         {...rest}
+        value={value}
+        onChange={onChange}
         className={[
           styles.input,
           icon && position === "right" && styles.right,
@@ -38,21 +71,23 @@ export const Input: React.FC<IInputProps> = (props) => {
           .join(" ")}
       />
       {icon && position === "right" && icon}
-      {submitProps?.display && (
+      {submit && (
         <Button
-          {...submitProps}
+          {...(typeof submit === "object" ? submit : {})}
           className={[
             styles.submit,
             icon && position === "right" && styles["submit-right"],
-            submitProps.className,
+            typeof submit === "object" && submit.className,
           ]
             .filter((el) => el)
             .join(" ")}
           type="submit"
         >
-          {submitProps.children || "Search"}
+          {typeof submit === "object" && submit.children
+            ? submit.children
+            : "Search"}
         </Button>
       )}
-    </div>
+    </Container>
   );
 };
