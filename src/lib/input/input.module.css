@@ -10,7 +10,7 @@
   @apply twcss-border-neutral-900;
 }
 .submit {
-  @apply twcss-self-stretch;
+  @apply twcss-self-stretch twcss-my-0;
 }
 .left {
   @apply twcss-pl-2;

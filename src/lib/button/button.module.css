@@ -1,14 +1,14 @@
 .button {
   background-color: var(--button-color);
   color: var(--button-text-color);
-  @apply twcss-py-1 twcss-px-5 twcss-outline-0
+  @apply twcss-flex twcss-flex-row twcss-gap-2 twcss-items-center twcss-py-1 twcss-px-5 twcss-outline-0 twcss-my-2
     twcss-border-0;
 }
 .left {
-  @apply twcss-pl-2;
+  @apply twcss-pl-4;
 }
 .right {
-  @apply twcss-pr-2;
+  @apply twcss-pr-4;
 }
 
 .button:hover {

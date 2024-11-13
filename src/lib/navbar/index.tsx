@@ -27,7 +27,7 @@ export const Navbar: React.FC<INavbarProps> = (props) => {
   return (
     <>
       {Trigger}
-      <ul
+      <nav
         role="navigation"
         {...rest}
         className={[
@@ -43,7 +43,7 @@ export const Navbar: React.FC<INavbarProps> = (props) => {
       >
         {Trigger}
         {children}
-      </ul>
+      </nav>
     </>
   );
 };
