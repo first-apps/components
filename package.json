@@ -1,12 +1,12 @@
 {
-  "name": "@first-apps/mf-components",
-  "version": "1.1.5",
+  "name": "@first-apps/components",
+  "version": "1.0.1",
   "description": "Components library for @first-apps built on React JS",
   "main": "dist/cjs/index.js",
   "module": "dist/cjs/index.js",
   "types": "dist/index.d.ts",
   "repository": {
-    "url": "https://github.com/first-apps/mf-components.git"
+    "url": "https://github.com/first-apps/components.git"
   },
   "author": {
     "name": "dikshit-n",
@@ -15,47 +15,25 @@
   "keywords": [
     "react",
     "components",
-    "firstApps",
-    "mf",
-    "module federation",
-    "micro frontend"
+    "firstApps"
   ],
   "scripts": {
     "dev": "set PORT=8080 && react-scripts start",
     "start": "set PORT=8080 && react-scripts start",
     "build": "rm -rf build && react-scripts build",
     "build:lib": "rm -rf dist && rollup -c rollup.config.ts --bundleConfigAsCjs",
-    "publish": "npm publish --access public --tag experimental",
-    "link:local": "npm link",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "publish": "npm publish --access public --tag latest",
+    "link:local": "npm link"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.5",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-    "workbox-background-sync": "^6.6.0",
-    "workbox-broadcast-update": "^6.6.0",
-    "workbox-cacheable-response": "^6.5.4",
-    "workbox-core": "^6.6.0",
-    "workbox-expiration": "^6.6.0",
-    "workbox-google-analytics": "^6.6.1",
-    "workbox-navigation-preload": "^6.6.0",
-    "workbox-precaching": "^6.6.0",
-    "workbox-range-requests": "^6.6.0",
-    "workbox-routing": "^6.6.0",
-    "workbox-strategies": "^6.6.0",
-    "workbox-streams": "^6.6.0"
+    "react-scripts": "5.0.1"
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -79,7 +57,6 @@
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.1",
-    "@types/jest": "^27.5.2",
     "@types/node": "^17.0.45",
     "@types/react": "^18.3.8",
     "@types/react-dom": "^18.3.0",
